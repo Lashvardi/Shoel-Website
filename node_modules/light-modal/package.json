@@ -1,0 +1,41 @@
+{
+  "name": "light-modal",
+  "version": "1.2.1",
+  "description": "A new lightweight css modal.",
+  "main": "dist/css/light-modal.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hunzaboy/Light-Modal.git"
+  },
+  "style": "dist/css/light-modal.css",
+  "author": "Aslam Shah",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.13.1",
+    "parcel-bundler": "^1.12.4",
+    "postcss-cli": "^7.1.0",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output dist/css/light-modal.css dist/css/light-modal.css",
+    "build-cleancss": "cleancss -o dist/css/light-modal.min.css dist/css/light-modal.css",
+    "build-clean": "rimraf dist",
+    "build-sass": "node-sass --output-style expanded --source-map true src/scss/light-modal.scss dist/css/light-modal.css",
+    "deploy": "npm run build",
+    "start": "npm run build-sass -- --watch",
+    "start-demo": "parcel index.html -d docs --open",
+    "build-demo": "parcel build index.html -d docs --public-url ./"
+  },
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/hunzaboy/Light-Modal/issues"
+  },
+  "homepage": "https://github.com/hunzaboy/Light-Modal#readme",
+  "keywords": [
+    "css",
+    "modal"
+  ]
+}

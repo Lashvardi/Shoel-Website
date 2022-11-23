@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery hoverDelay.js Demo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/darkly/bootstrap.min.css">
+<style>
+.container { margin-top: 150px ; }
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>jQuery hoverDelay.js Demo</h1>
+<ul id="demo-menu" class="list-group">
+			  <li class="menu-item list-group-item">jQuery</li>
+			  <li class="menu-item list-group-item">Script</li>
+			  <li class="menu-item list-group-item">Net</li>
+			  <li class="menu-item list-group-item">hoverDelay.js</li>
+			  <li class="menu-item list-group-item">Example</li>
+			</ul>
+            </div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="jquery.hoverDelay.js"></script>
+<script>
+$(function(){
+  $('#demo-menu li').hoverDelay({
+      delayIn: 200,
+      delayOut:700,
+      handlerIn: function($element){
+          console.log('in started');
+          $element.css({backgroundColor: '#FF0000'});
+          console.log('in finished');
+      },
+      handlerOut: function($element){
+          console.log('out started');
+          $element.css({backgroundColor: '#ccc'});
+          console.log('out finished');
+      }
+  });
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
